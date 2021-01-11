@@ -16,6 +16,7 @@ import java.util.Properties;
 public class HibernateConfiguration {
 
     @Bean
+    //TODO take this from application.yml
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -51,7 +52,7 @@ public class HibernateConfiguration {
         hibernateProperties.setProperty("spring.jpa.properties.hibernate.show_sql", "true");
         hibernateProperties.setProperty("spring.jpa.properties.hibernate.use_sql_comments", "true");
         hibernateProperties.setProperty("spring.jpa.properties.hibernate.format_sql", "true");
-
+        hibernateProperties.setProperty("spring.jpa.properties.hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         return hibernateProperties;
     }
 }

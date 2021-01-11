@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TableARepository extends JpaRepository<TableA, String> {
+
+    void deleteById(Integer id);
 }
 

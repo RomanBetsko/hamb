@@ -10,4 +10,6 @@ public interface HelloWordService {
     List<TableA> getAllHibernate();
 
     List<TableB> getAllMyBatis();
+
+    void insertWithValues(Integer id, String abo, String phone);
 }

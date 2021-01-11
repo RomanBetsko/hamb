@@ -1,0 +1,44 @@
+**1. Create db with name "hamb"**
+
+**2. Create 2 tables:**
+1) for hibernate: "table_a"
+2) for myBatis: "table_b"
+
+`       CREATE TABLE public.table_a
+        (
+        id integer NOT NULL,
+        abo character varying NOT NULL,
+        phone character varying NOT NULL,
+        PRIMARY KEY (id)
+        );`
+
+`        CREATE TABLE public.table_b
+        (
+        id integer NOT NULL,
+        abo character varying NOT NULL,
+        phone character varying NOT NULL,
+        PRIMARY KEY (id)
+        );`
+
+3. **INSERT values:**
+`
+        INSERT INTO public.table_a(
+        id, abo, phone)
+        VALUES (1, 'first', '055');`
+
+`       INSERT INTO public.table_a(
+        id, abo, phone)
+        VALUES (2, 'second', '055');`
+   
+`        INSERT INTO public.table_b(
+        id, abo, phone)
+        VALUES (1, 'testdatamybatis', '044');`
+
+4. **in `HibernateConfiguration`**
+   
+   dataSource.setUsername("");
+   dataSource.setPassword("");
+   set your values
+
+5. experiments with @Transactional you can check in DoSomethingRunnable class
+   (with @Transactional returns changes back)

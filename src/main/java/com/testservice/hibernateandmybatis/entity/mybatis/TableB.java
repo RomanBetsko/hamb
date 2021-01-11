@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class TableB {
 
-    private Long id;
+    private Integer id;
     private String abo;
     private String phone;
 }

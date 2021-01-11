@@ -8,22 +8,33 @@ import com.testservice.hibernateandmybatis.service.HelloWordService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class HelloWordServiceImpl implements HelloWordService {
 
-    private final TableARepository repository;
+    private final TableARepository tableARepository;
     private final TableBMapper tableBMapper;
 
     @Override
     public List<TableA> getAllHibernate() {
-        return repository.findAll();
+        return tableARepository.findAll();
     }
 
     @Override
     public List<TableB> getAllMyBatis() {
         return tableBMapper.getAll();
+    }
+
+    @Override
+    @Transactional
+    public void insertWithValues(Integer id, String abo, String phone) {
+        tableARepository.save(TableA.builder()
+                .id(id)
+                .abo(abo)
+                .phone(phone)
+                .build());
     }
 }
