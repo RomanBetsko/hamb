@@ -24,6 +24,7 @@ public class DoSomethingRunnable implements Runnable {
     public void run() {
         List<TableB> tableBList = tableBMapper.getAll();
 
+
         List<TableA> tableAList = helloWordService.getAllHibernate();
         TableA first = tableAList.get(1);
         first.setAbo("updated value");
