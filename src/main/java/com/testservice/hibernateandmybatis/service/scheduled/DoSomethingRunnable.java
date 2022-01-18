@@ -28,7 +28,6 @@ public class DoSomethingRunnable implements Runnable {
         TableA first = tableAList.get(1);
         first.setAbo("updated value");
         tableARepository.save(first);
-
         helloWordService.insertWithValues(3, "new value", null);
 //        tableARepository.deleteById(3);
 
