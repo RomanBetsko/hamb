@@ -30,7 +30,6 @@ public class DoSomethingRunnable implements Runnable {
         tableARepository.save(first);
         helloWordService.insertWithValues(3, "new value", null);
 //        tableARepository.deleteById(3);
-
         System.out.println(tableAList.toString() + tableBList.toString());
     }
 }
