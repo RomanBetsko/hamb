@@ -11,4 +11,5 @@ public class HibernateAndMyBatisApplication {
         SpringApplication.run(HibernateAndMyBatisApplication.class, args);
     }
 
+
 }
